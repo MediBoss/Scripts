@@ -1,8 +1,12 @@
 
 '''
     This script parses through a text file that contains an article. Within the article, there are some
-    phone numbers. The job of this script si to recognize and find every single phone number(USA)
+    phone numbers. The job of this script is to recognize and find every single phone number(USA).
+    Example : Phone number found : 8623427865
 '''
+
+import os
+
 def isPhoneNumber(text):
 
     if len(text) != 12:
@@ -22,12 +26,17 @@ def isPhoneNumber(text):
             return False
     return True
 
-def main():
+def parse():
+    try:
+        with open('article.txt',r) as file:
+            
 
-    print("Is 456-876-8976 a phone number : {}".format(isPhoneNumber('456-876-8976')))
-    print("Is 45-876-8346 a phone number : {}".format(isPhoneNumber('45-876-8346')))
-    print("Is 456-87-8972 a phone number : {}".format(isPhoneNumber('456-87-8972')))
-    print("Is 862-321-1232 a phone number : {}".format(isPhoneNumber('862-321-1232')))
+
+    except IOError:
+        # error
+
+
+def main():
 
 
 if __name__ == '__main__':
