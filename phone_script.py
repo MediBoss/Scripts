@@ -1,4 +1,4 @@
-# Simple script that checks if a data passed as parameter is a phone number or not.
+# Simple script that checks if a data passed as parameter is a phone number or not using regular expressions.
 
 #! usr/bin/env/ python3
 def isPhoneNumber(text):
