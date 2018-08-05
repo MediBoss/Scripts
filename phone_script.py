@@ -37,7 +37,6 @@ def parse_article():
                     chunk_of_data = current_line[index: index+12]
                     if isPhoneNumber(chunk_of_data):
                         print('Phone number found : ' + chunk_of_data)
-                print('Done')
 
     except IOError:
         print("ERROR FOUND : FILE COULD NOT BE OPENED")
