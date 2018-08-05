@@ -1,6 +1,8 @@
-# Simple script that checks if a data passed as parameter is a phone number or not using regular expressions.
 
-#! usr/bin/env/ python3
+'''
+    This script parses through a text file that contains an article. Within the article, there are some
+    phone numbers. The job of this script si to recognize and find every single phone number(USA)
+'''
 def isPhoneNumber(text):
 
     if len(text) != 12:
