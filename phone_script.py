@@ -7,6 +7,7 @@
 
 import os
 
+# Function to detect if a string passed as a parameter as a string
 def isPhoneNumber(text):
 
     if len(text) != 12:
@@ -26,14 +27,21 @@ def isPhoneNumber(text):
             return False
     return True
 
+# Function to parse through the text file
 def parse():
+    file_path = 'article.txt'
     try:
-        with open('article.txt',r) as file:
-            
-
+        with open(file_path,r) as article:
+            while True:
+                current_line = article.readline()
+                for index in rannge(len(current_line)):
+                    chunk_of_data = current_line[index: index+12]
+                    if isPhoneNumber(chunk_of_data):
+                        print('Phone number found : ' + chunk_of_data)
+                print('Done')
 
     except IOError:
-        # error
+        print("ERROR FOUND : FILE COULD NOT BE OPENED")
 
 
 def main():
