@@ -7,7 +7,7 @@
 
 import os
 
-# Function to detect if a string passed as a parameter as a string
+# Function to detect if a string passed as a parameter is a phone number
 def isPhoneNumber(text):
     if len(text) != 12:
         return False
@@ -37,10 +37,8 @@ def parse_article():
                     if isPhoneNumber(chunk_of_data):
                         print('Phone number found : {}'.format(chunk_of_data))
 
-
     except IOError:
         print("ERROR FOUND : FILE COULD NOT BE OPENED")
-
 
 def main():
 
