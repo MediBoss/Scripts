@@ -4,12 +4,18 @@
     phone numbers. The job of this script is to recognize and find every single phone number.
     Fomrat of typical phone (n) numbers: nnn-nnn-nnn , (nnn) nnn-nnnn, nnn.nnn.nnnn, nnn-nnn-nnnn xnn
 '''
-
+#! /usr/bin/env python
 import os
 import re
 
 # Function to detect if a string passed as a parameter is a phone number
 def isPhoneNumber(text):
+        #defining diff. types of phone numbers format using regular expressions
+    first_phone_exp = re.compile(r"\d{3}-\d{3}-\d{4}") # represents the nnn-nnn-nnn cell phone format
+    second_phone_exp = re.compile(r"\d{3}.\d{3}.\d{4}") # represents the nnn.nnn.nnn cell phone format
+    third_phone_expx = re.compile(r"\d{3}-\d{3}-\d{4}") # represents the  (nnn) nnn-nnnn cell phone format
+
+        #Checking properties of a standard phone number
     if len(text) != 12:
         return False
     for data in range(0,3):
