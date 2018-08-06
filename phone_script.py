@@ -31,7 +31,12 @@ def parse_article():
     file_path = 'article.txt'
     try:
         with open(file_path,'r') as article:
-            
+            for current_line in article:
+                for index in range(len(current_line)):
+                    chunk_of_data = current_line[index:index+12]
+                    if isPhoneNumber(chunk_of_data):
+                        print('Phone number found : {}'.format(chunk_of_data))
+
 
     except IOError:
         print("ERROR FOUND : FILE COULD NOT BE OPENED")
