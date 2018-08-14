@@ -10,13 +10,15 @@ import re
 
 # Function to detect if a string passed as a parameter is a phone number
 def isPhoneNumber(data):
+    first_exp = re.compile(r'\d{3}-\d{3}-\d{4}| \d{3}.\d{3}.\d{4}')
+    if (data == None):
+        return
+    else:
 
-    #first_phone_exp = re.compile(r'(\d{3}-)?\d{3}-\d{4}')# represents the nnn-nnn-nnn cell phone format with the an area code optional
-    #second_phone_exp = re.compile(r'\d{3}.\d{3}.\d{4}') # represents the nnn.nnn.nnn cell phone format
-    #third_phone_expx = re.compile(r'(\(\d\d\d\)) (\d\d\d-\d\d\d\d)') # represents the  (nnn) nnn-nnnn cell phone format
-    results = []
-    phone_exp = re.compile(r'\d{3}-\d{3}-\d{4}|\d{3}.\d{3}.\d{4}')
-    return results.append(phone_exp.findall(data))
+
+    #second_exp = re.compile(r'\d{3}-\d{3}-\d{4}')
+    #third_exp = re.compile(r'\(\d\d\d\)-\d{3}-\d{4}')
+
 
 # Function to parse through the text file
 def parse_article():
@@ -24,7 +26,7 @@ def parse_article():
     try:
         with open(file_path,'r') as article:
             for current_line in article:
-                isPhoneNumber(line)
+                print(isPhoneNumber(current_line))
 
     except IOError:
         print("ERROR FOUND : FILE COULD NOT BE OPENED")
