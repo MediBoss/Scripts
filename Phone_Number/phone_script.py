@@ -11,10 +11,7 @@ import re
 # Function to detect if a string passed as a parameter is a phone number
 def isPhoneNumber(data):
     first_exp = re.compile(r'\d{3}-\d{3}-\d{4}| \d{3}.\d{3}.\d{4}| \d{3}-\d{4}')
-    if (data[0] is None):
-        pass
-    else:
-        return first_exp.findall(data)
+    return first_exp.findall(data)
 
 # Function to parse through the text file
 def parse_article():
@@ -23,7 +20,7 @@ def parse_article():
         with open(file_path,'r') as article:
             for current_line in article:
                 if current_line is None:
-                    pass
+                    continue
                 else:
                     print(isPhoneNumber(current_line))
 
