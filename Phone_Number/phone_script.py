@@ -10,7 +10,7 @@ import re
 
 # Function to detect if a string passed as a parameter is a phone number
 def isPhoneNumber(data):
-    first_exp = re.compile(r'\d{3}-\d{3}-\d{4}| \d{3}.\d{3}.\d{4}')
+    first_exp = re.compile(r'\d{3}-\d{3}-\d{4}| \d{3}.\d{3}.\d{4}| \d{3}-\d{4}')
     if (data[0] is None):
         pass
     else:
