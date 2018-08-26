@@ -2,7 +2,7 @@
 '''
     This script parses through a text file that contains an article. Within the article, there are some
     phone numbers. The job of this script is to recognize and find every single phone number.
-    Fomrat of typical phone (n) numbers: nnn-nnn-nnn , (nnn) nnn-nnnn, nnn.nnn.nnnn, nnn-nnn-nnnn xnn
+    Format of typical phone (n) numbers: nnn-nnn-nnn , (nnn) nnn-nnnn, nnn.nnn.nnnn, nnn-nnn-nnnn xnn
 '''
 #! /usr/bin/env python
 import os
