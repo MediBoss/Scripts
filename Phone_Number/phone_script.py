@@ -19,10 +19,9 @@ def parse_article():
     try:
         with open(file_path,'r') as article:
             for current_line in article:
-                if current_line is None:
-                    continue
-                else:
+                if len(current_line) != 0:
                     print(isPhoneNumber(current_line))
+
 
     except IOError:
         print("ERROR FOUND : FILE COULD NOT BE OPENED")
